@@ -11,7 +11,7 @@ TEST_CASE("Tipo int"){
 }
 
 TEST_CASE("Tipo float"){
-    vector<float> vectorFloat = {1.2,5.3,45.8,8.5,88899,14.9,8,6,1,92.5,106,9999,7};
+    vector<float> vectorFloat = {1.2,5.3,45.8,8.5,88899,14.9,8,6,1,92.5,106,9999,7,1,1};
     REQUIRE(buscar(vectorFloat)==88899.0f);
 
 }

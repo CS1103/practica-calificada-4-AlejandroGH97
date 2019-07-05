@@ -41,14 +41,15 @@ T buscar(vector<T> miVector){
     std::vector<std::promise<T>> prms(NUM_THREADS);
     std::vector<std::thread> hilos;
 
+    int extra = miVector.size()%NUM_THREADS;
 
     for(int i = 0;i<NUM_THREADS;i++) {
 
         start = miVector.size()*i/NUM_THREADS;
 
 
-        if(i==NUM_THREADS-1) {
-            stop = miVector.size();
+        if(i<extra) {
+            stop = start + miVector.size()/NUM_THREADS + 1;
         }else{
             stop = start + (miVector.size() / NUM_THREADS);
         }
